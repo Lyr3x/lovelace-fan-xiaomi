@@ -184,7 +184,7 @@ class FanXiaomi extends HTMLElement {
     }
 
     setSpeed(hass, value) {
-        hass.callService('fan', 'set_speed', {
+        hass.callService('fan', 'set_speed_percentage', {
             entity_id: this.config.entity,
             speed: value
         });
@@ -650,7 +650,7 @@ class FanXiaomi extends HTMLElement {
                     });
                 } else {
                     this.log(`Set sleep mode to: Off`)
-                    hass.callService('fan', 'set_speed', {
+                    hass.callService('fan', 'set_speed_percentage', {
                         entity_id: entityId,
                         speed: 'low'
                     });
